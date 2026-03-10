@@ -1,0 +1,206 @@
+/* Auth pages (Login/Register) – modern blog theme */
+
+.authPageWrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(900px 500px at 15% 10%, rgba(37, 99, 235, 0.22), transparent 60%),
+    radial-gradient(900px 500px at 85% 0%, rgba(16, 185, 129, 0.18), transparent 55%),
+    radial-gradient(900px 500px at 50% 100%, rgba(168, 85, 247, 0.14), transparent 60%),
+    linear-gradient(180deg, #0b1220 0%, #0a0f1a 40%, #070b13 100%);
+  color: #e5e7eb;
+}
+
+.authPageMain {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 48px 16px;
+}
+
+.authShell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 48px 16px;
+  background:
+    radial-gradient(900px 500px at 15% 10%, rgba(37, 99, 235, 0.22), transparent 60%),
+    radial-gradient(900px 500px at 85% 0%, rgba(16, 185, 129, 0.18), transparent 55%),
+    radial-gradient(900px 500px at 50% 100%, rgba(168, 85, 247, 0.14), transparent 60%),
+    linear-gradient(180deg, #0b1220 0%, #0a0f1a 40%, #070b13 100%);
+  color: #e5e7eb;
+}
+
+.authCard {
+  width: min(380px, 100%);
+  border-radius: 18px;
+  padding: 24px 20px 20px;
+  background: rgba(17, 24, 39, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.45),
+    0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  backdrop-filter: blur(10px);
+}
+
+.authBrand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.authLogo {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2563eb 0%, #22c55e 100%);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+.authTitle {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  color: #f8fafc;
+}
+
+.authSubtitle {
+  margin: 0 0 18px;
+  color: rgba(226, 232, 240, 0.75);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.authForm {
+  display: grid;
+  gap: 14px;
+}
+
+.authField {
+  display: grid;
+  gap: 4px;
+}
+
+.authLabel {
+  font-size: 13px;
+  color: rgba(226, 232, 240, 0.88);
+  font-weight: 600;
+}
+
+.authInput {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(2, 6, 23, 0.55);
+  color: #e5e7eb;
+  font-size: 15px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.authInput::placeholder {
+  color: rgba(226, 232, 240, 0.45);
+}
+
+.authInput:focus {
+  border-color: rgba(59, 130, 246, 0.75);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+}
+
+.authInputRow {
+  position: relative;
+  display: block;
+}
+
+.authInputRow .authInput {
+  padding-right: 42px;
+}
+
+.authGhostBtn {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 28px;
+  padding: 0 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(15, 23, 42, 0.4);
+  color: rgba(226, 232, 240, 0.9);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.authGhostBtn:hover {
+  border-color: rgba(148, 163, 184, 0.35);
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.authPrimaryBtn {
+  margin-top: 6px;
+  width: 100%;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  color: #071018;
+  background: linear-gradient(135deg, #60a5fa 0%, #22c55e 100%);
+  box-shadow: 0 16px 32px rgba(34, 197, 94, 0.18);
+  transition: transform 120ms ease, filter 120ms ease, opacity 120ms ease;
+}
+
+.authPrimaryBtn:hover {
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+}
+
+.authPrimaryBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.authError {
+  margin-top: 2px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: rgba(254, 226, 226, 0.95);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.authFooter {
+  margin-top: 16px;
+  color: rgba(226, 232, 240, 0.7);
+  font-size: 13px;
+  text-align: center;
+}
+
+.authLink {
+  color: #93c5fd;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.authLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 420px) {
+  .authCard {
+    padding: 22px 16px 16px;
+    border-radius: 16px;
+  }
+}
+
