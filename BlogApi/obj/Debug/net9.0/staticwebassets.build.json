@@ -1,12 +1,1382 @@
 {
   "Version": 1,
-  "Hash": "BI1FL8i8kgtgbMc+M1+D0PaNb7d/cOIOQUwbOoWRSCE=",
+  "Hash": "JUQ4FuTstK5CQuAlx4vaPF4C4RR3a6t2ie+o8Hyks7w=",
   "Source": "BlogApi",
   "BasePath": "_content/BlogApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "BlogApi\\wwwroot",
+      "Source": "BlogApi",
+      "ContentRoot": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\",
+      "BasePath": "_content/BlogApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\1l0jgmb8yg-zsmyejydxw.gz",
+      "SourceId": "BlogApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/BlogApi",
+      "RelativePath": "dist/assets/index-BFtWa0ds#[.{fingerprint=zsmyejydxw}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\assets\\index-BFtWa0ds.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "i71bb5djpk",
+      "Integrity": "InYNWfmrOquRwX4bs98rHJxAWLKtBvZysJx8UavlWXU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\assets\\index-BFtWa0ds.js"
+    },
+    {
+      "Identity": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\pqshmkc0xk-pmf31ho7sq.gz",
+      "SourceId": "BlogApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/BlogApi",
+      "RelativePath": "dist/index#[.{fingerprint=pmf31ho7sq}]?.html.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\index.html",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "3u79b4o1w6",
+      "Integrity": "68pq3FbD1T1WeA1B2GgTtJop0GQrtYHRZwoo5/Q/uuk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\sexi1qktev-bu0nk1j0a4.gz",
+      "SourceId": "BlogApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/BlogApi",
+      "RelativePath": "dist/assets/index-DRhRjluz#[.{fingerprint=bu0nk1j0a4}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\assets\\index-DRhRjluz.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "vuvarqgi4y",
+      "Integrity": "x+JdYvaIs19zk8qbNSN0SBlytAUM45B1U0ArHH2RcjU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\assets\\index-DRhRjluz.css"
+    },
+    {
+      "Identity": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\wu5j1hagva-69kjnsiwqx.gz",
+      "SourceId": "BlogApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/BlogApi",
+      "RelativePath": "dist/vite#[.{fingerprint=69kjnsiwqx}]?.svg.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\vite.svg",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "zg8rzofdes",
+      "Integrity": "XQkDcax/ToCYcNsBDmzd6VCkok+CNLm2INPe95PRPSM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\vite.svg"
+    },
+    {
+      "Identity": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\assets\\index-BFtWa0ds.js",
+      "SourceId": "BlogApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\",
+      "BasePath": "_content/BlogApi",
+      "RelativePath": "dist/assets/index-BFtWa0ds#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zsmyejydxw",
+      "Integrity": "Df7b24SBEFyJ5kHRSQw+iFxKj8iQNym5kbgzmyRgJMQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\dist\\assets\\index-BFtWa0ds.js"
+    },
+    {
+      "Identity": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\assets\\index-DRhRjluz.css",
+      "SourceId": "BlogApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\",
+      "BasePath": "_content/BlogApi",
+      "RelativePath": "dist/assets/index-DRhRjluz#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bu0nk1j0a4",
+      "Integrity": "A8zT49PUQblklVjSN8OyO/9Qdbl9maRjLgR+aY7+NCo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\dist\\assets\\index-DRhRjluz.css"
+    },
+    {
+      "Identity": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\index.html",
+      "SourceId": "BlogApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\",
+      "BasePath": "_content/BlogApi",
+      "RelativePath": "dist/index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pmf31ho7sq",
+      "Integrity": "4TYSz5J2QYEd6oNC6t5M77x+mMrGgYsNmB2i/8DFRpM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\dist\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\vite.svg",
+      "SourceId": "BlogApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\",
+      "BasePath": "_content/BlogApi",
+      "RelativePath": "dist/vite#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "69kjnsiwqx",
+      "Integrity": "SnSK/UQ5GLsWWRyDTEAdrjPoeGGrXbrQgRw6O0qSFPs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\dist\\vite.svg"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "dist/assets/index-BFtWa0ds.js",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\1l0jgmb8yg-zsmyejydxw.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000010450413"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "95689"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"InYNWfmrOquRwX4bs98rHJxAWLKtBvZysJx8UavlWXU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Df7b24SBEFyJ5kHRSQw+iFxKj8iQNym5kbgzmyRgJMQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Df7b24SBEFyJ5kHRSQw+iFxKj8iQNym5kbgzmyRgJMQ="
+        }
+      ]
+    },
+    {
+      "Route": "dist/assets/index-BFtWa0ds.js",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\assets\\index-BFtWa0ds.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "294331"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Df7b24SBEFyJ5kHRSQw+iFxKj8iQNym5kbgzmyRgJMQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Df7b24SBEFyJ5kHRSQw+iFxKj8iQNym5kbgzmyRgJMQ="
+        }
+      ]
+    },
+    {
+      "Route": "dist/assets/index-BFtWa0ds.js.gz",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\1l0jgmb8yg-zsmyejydxw.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "95689"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"InYNWfmrOquRwX4bs98rHJxAWLKtBvZysJx8UavlWXU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-InYNWfmrOquRwX4bs98rHJxAWLKtBvZysJx8UavlWXU="
+        }
+      ]
+    },
+    {
+      "Route": "dist/assets/index-BFtWa0ds.zsmyejydxw.js",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\1l0jgmb8yg-zsmyejydxw.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000010450413"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "95689"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"InYNWfmrOquRwX4bs98rHJxAWLKtBvZysJx8UavlWXU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Df7b24SBEFyJ5kHRSQw+iFxKj8iQNym5kbgzmyRgJMQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zsmyejydxw"
+        },
+        {
+          "Name": "label",
+          "Value": "dist/assets/index-BFtWa0ds.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Df7b24SBEFyJ5kHRSQw+iFxKj8iQNym5kbgzmyRgJMQ="
+        }
+      ]
+    },
+    {
+      "Route": "dist/assets/index-BFtWa0ds.zsmyejydxw.js",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\assets\\index-BFtWa0ds.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "294331"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Df7b24SBEFyJ5kHRSQw+iFxKj8iQNym5kbgzmyRgJMQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zsmyejydxw"
+        },
+        {
+          "Name": "label",
+          "Value": "dist/assets/index-BFtWa0ds.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Df7b24SBEFyJ5kHRSQw+iFxKj8iQNym5kbgzmyRgJMQ="
+        }
+      ]
+    },
+    {
+      "Route": "dist/assets/index-BFtWa0ds.zsmyejydxw.js.gz",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\1l0jgmb8yg-zsmyejydxw.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "95689"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"InYNWfmrOquRwX4bs98rHJxAWLKtBvZysJx8UavlWXU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zsmyejydxw"
+        },
+        {
+          "Name": "label",
+          "Value": "dist/assets/index-BFtWa0ds.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-InYNWfmrOquRwX4bs98rHJxAWLKtBvZysJx8UavlWXU="
+        }
+      ]
+    },
+    {
+      "Route": "dist/assets/index-DRhRjluz.bu0nk1j0a4.css",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\sexi1qktev-bu0nk1j0a4.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000350385424"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2853"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"x+JdYvaIs19zk8qbNSN0SBlytAUM45B1U0ArHH2RcjU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"A8zT49PUQblklVjSN8OyO/9Qdbl9maRjLgR+aY7+NCo=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bu0nk1j0a4"
+        },
+        {
+          "Name": "label",
+          "Value": "dist/assets/index-DRhRjluz.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-A8zT49PUQblklVjSN8OyO/9Qdbl9maRjLgR+aY7+NCo="
+        }
+      ]
+    },
+    {
+      "Route": "dist/assets/index-DRhRjluz.bu0nk1j0a4.css",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\assets\\index-DRhRjluz.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10726"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"A8zT49PUQblklVjSN8OyO/9Qdbl9maRjLgR+aY7+NCo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bu0nk1j0a4"
+        },
+        {
+          "Name": "label",
+          "Value": "dist/assets/index-DRhRjluz.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-A8zT49PUQblklVjSN8OyO/9Qdbl9maRjLgR+aY7+NCo="
+        }
+      ]
+    },
+    {
+      "Route": "dist/assets/index-DRhRjluz.bu0nk1j0a4.css.gz",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\sexi1qktev-bu0nk1j0a4.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2853"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"x+JdYvaIs19zk8qbNSN0SBlytAUM45B1U0ArHH2RcjU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bu0nk1j0a4"
+        },
+        {
+          "Name": "label",
+          "Value": "dist/assets/index-DRhRjluz.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-x+JdYvaIs19zk8qbNSN0SBlytAUM45B1U0ArHH2RcjU="
+        }
+      ]
+    },
+    {
+      "Route": "dist/assets/index-DRhRjluz.css",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\sexi1qktev-bu0nk1j0a4.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000350385424"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2853"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"x+JdYvaIs19zk8qbNSN0SBlytAUM45B1U0ArHH2RcjU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"A8zT49PUQblklVjSN8OyO/9Qdbl9maRjLgR+aY7+NCo=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-A8zT49PUQblklVjSN8OyO/9Qdbl9maRjLgR+aY7+NCo="
+        }
+      ]
+    },
+    {
+      "Route": "dist/assets/index-DRhRjluz.css",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\assets\\index-DRhRjluz.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10726"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"A8zT49PUQblklVjSN8OyO/9Qdbl9maRjLgR+aY7+NCo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-A8zT49PUQblklVjSN8OyO/9Qdbl9maRjLgR+aY7+NCo="
+        }
+      ]
+    },
+    {
+      "Route": "dist/assets/index-DRhRjluz.css.gz",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\sexi1qktev-bu0nk1j0a4.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2853"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"x+JdYvaIs19zk8qbNSN0SBlytAUM45B1U0ArHH2RcjU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-x+JdYvaIs19zk8qbNSN0SBlytAUM45B1U0ArHH2RcjU="
+        }
+      ]
+    },
+    {
+      "Route": "dist/index.html",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\pqshmkc0xk-pmf31ho7sq.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.003412969283"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "292"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"68pq3FbD1T1WeA1B2GgTtJop0GQrtYHRZwoo5/Q/uuk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"4TYSz5J2QYEd6oNC6t5M77x+mMrGgYsNmB2i/8DFRpM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4TYSz5J2QYEd6oNC6t5M77x+mMrGgYsNmB2i/8DFRpM="
+        }
+      ]
+    },
+    {
+      "Route": "dist/index.html",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "458"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4TYSz5J2QYEd6oNC6t5M77x+mMrGgYsNmB2i/8DFRpM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4TYSz5J2QYEd6oNC6t5M77x+mMrGgYsNmB2i/8DFRpM="
+        }
+      ]
+    },
+    {
+      "Route": "dist/index.html.gz",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\pqshmkc0xk-pmf31ho7sq.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "292"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"68pq3FbD1T1WeA1B2GgTtJop0GQrtYHRZwoo5/Q/uuk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-68pq3FbD1T1WeA1B2GgTtJop0GQrtYHRZwoo5/Q/uuk="
+        }
+      ]
+    },
+    {
+      "Route": "dist/index.pmf31ho7sq.html",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\pqshmkc0xk-pmf31ho7sq.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.003412969283"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "292"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"68pq3FbD1T1WeA1B2GgTtJop0GQrtYHRZwoo5/Q/uuk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"4TYSz5J2QYEd6oNC6t5M77x+mMrGgYsNmB2i/8DFRpM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pmf31ho7sq"
+        },
+        {
+          "Name": "label",
+          "Value": "dist/index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4TYSz5J2QYEd6oNC6t5M77x+mMrGgYsNmB2i/8DFRpM="
+        }
+      ]
+    },
+    {
+      "Route": "dist/index.pmf31ho7sq.html",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "458"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4TYSz5J2QYEd6oNC6t5M77x+mMrGgYsNmB2i/8DFRpM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pmf31ho7sq"
+        },
+        {
+          "Name": "label",
+          "Value": "dist/index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4TYSz5J2QYEd6oNC6t5M77x+mMrGgYsNmB2i/8DFRpM="
+        }
+      ]
+    },
+    {
+      "Route": "dist/index.pmf31ho7sq.html.gz",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\pqshmkc0xk-pmf31ho7sq.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "292"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"68pq3FbD1T1WeA1B2GgTtJop0GQrtYHRZwoo5/Q/uuk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Mar 2026 23:34:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pmf31ho7sq"
+        },
+        {
+          "Name": "label",
+          "Value": "dist/index.html.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-68pq3FbD1T1WeA1B2GgTtJop0GQrtYHRZwoo5/Q/uuk="
+        }
+      ]
+    },
+    {
+      "Route": "dist/vite.69kjnsiwqx.svg",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\wu5j1hagva-69kjnsiwqx.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001288659794"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "775"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XQkDcax/ToCYcNsBDmzd6VCkok+CNLm2INPe95PRPSM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 09 Mar 2026 23:47:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"SnSK/UQ5GLsWWRyDTEAdrjPoeGGrXbrQgRw6O0qSFPs=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "69kjnsiwqx"
+        },
+        {
+          "Name": "label",
+          "Value": "dist/vite.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SnSK/UQ5GLsWWRyDTEAdrjPoeGGrXbrQgRw6O0qSFPs="
+        }
+      ]
+    },
+    {
+      "Route": "dist/vite.69kjnsiwqx.svg",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\vite.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1497"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SnSK/UQ5GLsWWRyDTEAdrjPoeGGrXbrQgRw6O0qSFPs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 09 Mar 2026 23:47:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "69kjnsiwqx"
+        },
+        {
+          "Name": "label",
+          "Value": "dist/vite.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SnSK/UQ5GLsWWRyDTEAdrjPoeGGrXbrQgRw6O0qSFPs="
+        }
+      ]
+    },
+    {
+      "Route": "dist/vite.69kjnsiwqx.svg.gz",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\wu5j1hagva-69kjnsiwqx.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "775"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XQkDcax/ToCYcNsBDmzd6VCkok+CNLm2INPe95PRPSM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 09 Mar 2026 23:47:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "69kjnsiwqx"
+        },
+        {
+          "Name": "label",
+          "Value": "dist/vite.svg.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XQkDcax/ToCYcNsBDmzd6VCkok+CNLm2INPe95PRPSM="
+        }
+      ]
+    },
+    {
+      "Route": "dist/vite.svg",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\wu5j1hagva-69kjnsiwqx.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001288659794"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "775"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XQkDcax/ToCYcNsBDmzd6VCkok+CNLm2INPe95PRPSM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 09 Mar 2026 23:47:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"SnSK/UQ5GLsWWRyDTEAdrjPoeGGrXbrQgRw6O0qSFPs=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SnSK/UQ5GLsWWRyDTEAdrjPoeGGrXbrQgRw6O0qSFPs="
+        }
+      ]
+    },
+    {
+      "Route": "dist/vite.svg",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\vite.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1497"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SnSK/UQ5GLsWWRyDTEAdrjPoeGGrXbrQgRw6O0qSFPs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 09 Mar 2026 23:47:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SnSK/UQ5GLsWWRyDTEAdrjPoeGGrXbrQgRw6O0qSFPs="
+        }
+      ]
+    },
+    {
+      "Route": "dist/vite.svg.gz",
+      "AssetFile": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\obj\\Debug\\net9.0\\compressed\\wu5j1hagva-69kjnsiwqx.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "775"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XQkDcax/ToCYcNsBDmzd6VCkok+CNLm2INPe95PRPSM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 09 Mar 2026 23:47:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XQkDcax/ToCYcNsBDmzd6VCkok+CNLm2INPe95PRPSM="
+        }
+      ]
+    }
+  ]
 }

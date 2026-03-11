@@ -155,3 +155,8 @@ C:\Users\1meli\Documents\A\BlogProject\BlogApi\obj\Debug\net9.0\refint\BlogApi.d
 C:\Users\1meli\Documents\A\BlogProject\BlogApi\obj\Debug\net9.0\BlogApi.pdb
 C:\Users\1meli\Documents\A\BlogProject\BlogApi\obj\Debug\net9.0\BlogApi.genruntimeconfig.cache
 C:\Users\1meli\Documents\A\BlogProject\BlogApi\obj\Debug\net9.0\ref\BlogApi.dll
+C:\Users\1meli\Documents\A\BlogProject\BlogApi\bin\Debug\net9.0\BlogApi.staticwebassets.runtime.json
+C:\Users\1meli\Documents\A\BlogProject\BlogApi\obj\Debug\net9.0\compressed\1l0jgmb8yg-zsmyejydxw.gz
+C:\Users\1meli\Documents\A\BlogProject\BlogApi\obj\Debug\net9.0\compressed\sexi1qktev-bu0nk1j0a4.gz
+C:\Users\1meli\Documents\A\BlogProject\BlogApi\obj\Debug\net9.0\compressed\pqshmkc0xk-pmf31ho7sq.gz
+C:\Users\1meli\Documents\A\BlogProject\BlogApi\obj\Debug\net9.0\compressed\wu5j1hagva-69kjnsiwqx.gz

@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\assets\\index-BFtWa0ds.js",
+      "PackagePath": "staticwebassets\\dist\\assets\\index-BFtWa0ds.js"
+    },
+    {
+      "Id": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\assets\\index-DRhRjluz.css",
+      "PackagePath": "staticwebassets\\dist\\assets\\index-DRhRjluz.css"
+    },
+    {
+      "Id": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\index.html",
+      "PackagePath": "staticwebassets\\dist\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi\\wwwroot\\dist\\vite.svg",
+      "PackagePath": "staticwebassets\\dist\\vite.svg"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.BlogApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.BlogApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.BlogApi.props",
+      "PackagePath": "build\\BlogApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.BlogApi.props",
+      "PackagePath": "buildMultiTargeting\\BlogApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.BlogApi.props",
+      "PackagePath": "buildTransitive\\BlogApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
