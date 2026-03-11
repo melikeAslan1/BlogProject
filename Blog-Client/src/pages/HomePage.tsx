@@ -7,38 +7,42 @@ import "../components/site.css";
 const HomePage: React.FC = () => {
     const { user } = useAuth();
 
-    return(
-        <div style={{ minHeight: "100vh", background: "#0b1220", color: "#e5e7eb" }}>
+    return (
+        <div className="dashboardPage">
             <SiteHeader />
 
-            <main style={{ padding: "28px 0 60px" }}>
+            <main className="dashboardMain">
                 <div className="siteContainer">
-                    <h1 style={{ margin: 0, fontSize: 28, letterSpacing: "-0.02em", color: "#f8fafc" }}>
-                        Panel
-                    </h1>
-                    <p style={{ marginTop: 8, color: "rgba(226, 232, 240, 0.75)" }}>
-                        Hoş geldin, <b>{user?.fullName ?? user?.email}</b>. Buradan yazılarını yönetebileceksin.
-                    </p>
+                    <header className="dashboardHeader">
+                        <div>
+                            <h1 className="dashboardTitle">Panel</h1>
+                            <p className="dashboardSubtitle">
+                                Hoş geldin, <b>{user?.fullName ?? user?.email}</b>. Buradan yazılarını yönetebileceksin.
+                            </p>
+                        </div>
+                        <Link to="/app/create" className="btn btnPrimary">
+                            Yeni Yazı Oluştur
+                        </Link>
+                    </header>
 
-                    <div
-                        style={{
-                            marginTop: 18,
-                            borderRadius: 18,
-                            padding: 16,
-                            background: "rgba(17, 24, 39, 0.55)",
-                            border: "1px solid rgba(148, 163, 184, 0.14)",
-                        }}
-                    >
-                        <div style={{ fontWeight: 850, marginBottom: 6 }}>Sonraki adımlar</div>
-                        <ul style={{ margin: 0, paddingLeft: 18, color: "rgba(226, 232, 240, 0.75)" }}>
-                            <li>Yazı listeleme (feed) ve detay sayfası</li>
-                            <li>
-                              <Link to="/app/create" style={{ color: "inherit", textDecoration: "underline" }}>
-                                Yeni yazı oluşturma / düzenleme
-                              </Link>
-                            </li>
-                            <li>Profil ve ayarlar</li>
-                        </ul>
+                    <div className="dashboardGrid">
+                        <Link to="/app/posts" className="dashboardCard">
+                            <div className="dashboardCardHeader">Yazılarımı Görüntüle</div>
+                            <p className="dashboardCardDesc">Sadece kendi yazılarını listele ve yönet.</p>
+                            <span className="dashboardCardAction">Yazıları Gör →</span>
+                        </Link>
+
+                        <Link to="/app/create" className="dashboardCard">
+                            <div className="dashboardCardHeader">Yeni Yazı Yaz</div>
+                            <p className="dashboardCardDesc">Hemen yeni bir yazı oluşturup paylaş.</p>
+                            <span className="dashboardCardAction">Yazı Oluştur →</span>
+                        </Link>
+
+                        <Link to="/app" className="dashboardCard">
+                            <div className="dashboardCardHeader">Hesap Ayarları</div>
+                            <p className="dashboardCardDesc">Profilini ve hesap bilgilerini güncelle.</p>
+                            <span className="dashboardCardAction">Ayarları Gör →</span>
+                        </Link>
                     </div>
                 </div>
             </main>

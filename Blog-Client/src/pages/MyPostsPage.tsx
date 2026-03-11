@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../lib/api";
 import SiteHeader from "../components/SiteHeader";
+import { useAuth } from "../auth/AuthContext";
 import "./blog-list.css";
 import "../components/site.css";
 
@@ -37,23 +38,36 @@ function excerpt(text: string, maxLen: number): string {
   return plain.slice(0, maxLen).trim() + "…";
 }
 
-const BlogListPage: React.FC = () => {
+const MyPostsPage: React.FC = () => {
+  const { user } = useAuth();
   const [items, setItems] = useState<BlogPostItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [page, setPage] = useState(1);
   const [totalFetched, setTotalFetched] = useState(0);
-
+  const [deletingIds, setDeletingIds] = useState<number[]>([]);
   const [query, setQuery] = useState("");
   const [search, setSearch] = useState("");
 
   useEffect(() => {
+    if (!user?.id) {
+      setError("Kullanıcı bilgisi alınamadı.");
+      setLoading(false);
+      return;
+    }
+
     let cancelled = false;
     setLoading(true);
     setError(null);
+
     api
       .get<BlogPostItem[]>("/api/blog", {
-        params: { page, pageSize: PAGE_SIZE, isPublished: true, q: search || undefined },
+        params: {
+          page,
+          pageSize: PAGE_SIZE,
+          authorId: user.id,
+          q: search || undefined,
+        },
       })
       .then((res) => {
         if (cancelled) return;
@@ -67,19 +81,35 @@ const BlogListPage: React.FC = () => {
       .finally(() => {
         if (!cancelled) setLoading(false);
       });
+
     return () => {
       cancelled = true;
     };
-  }, [page, search]);
+  }, [page, search, user?.id]);
+
+  const deletePost = async (id: number) => {
+    if (!window.confirm("Bu yazıyı silmek istediğinden emin misin?")) return;
+
+    setDeletingIds((prev) => [...prev, id]);
+    try {
+      await api.delete(`/api/blog/${id}`);
+      setItems((prev) => prev.filter((item) => item.id !== id));
+      setTotalFetched((prev) => Math.max(0, prev - 1));
+    } catch (err: any) {
+      window.alert(err.response?.data ?? "Yazı silinirken bir hata oluştu.");
+    } finally {
+      setDeletingIds((prev) => prev.filter((item) => item !== id));
+    }
+  };
 
   return (
     <div style={{ minHeight: "100vh" }}>
       <SiteHeader />
       <main className="blogListPage">
         <div className="siteContainer">
-          <h1>Yazılar</h1>
+          <h1>Yazılarım</h1>
           <p className="blogListIntro">
-            Yayınlanmış blog yazılarını burada listeleyebilirsin. Bir yazıya tıklayarak okuyabilirsin.
+            Buradan yalnızca hesabına ait yazıları görebilir, düzenleyebilir veya silebilirsin.
           </p>
 
           <form
@@ -94,7 +124,7 @@ const BlogListPage: React.FC = () => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               className="blogSearchInput"
-              placeholder="Ara..."
+              placeholder="Yazılarda ara..."
               aria-label="Yazılarda ara"
             />
             <button type="submit" className="btn">
@@ -108,23 +138,40 @@ const BlogListPage: React.FC = () => {
             <div className="blogListLoading">Yazılar yükleniyor…</div>
           ) : items.length === 0 ? (
             <div className="blogListEmpty">
-              Henüz yayınlanmış yazı yok. İlk yazıyı sen ekleyebilirsin.
+              Henüz yazı yok. <Link to="/app/create">Yeni yazı oluştur</Link>.
             </div>
           ) : (
             <>
               <ul className="blogList">
                 {items.map((post) => (
                   <li key={post.id}>
-                    <Link to={`/blog/${post.slug}`} className="blogCard">
-                      <h2 className="blogCardTitle">{post.title}</h2>
-                      <p className="blogCardExcerpt">{excerpt(post.content, EXCERPT_LENGTH)}</p>
+                    <div className="blogCard">
+                      <Link to={`/blog/${post.slug}`} className="blogCardLink">
+                        <h2 className="blogCardTitle">{post.title}</h2>
+                        <p className="blogCardExcerpt">{excerpt(post.content, EXCERPT_LENGTH)}</p>
+                      </Link>
+
                       <div className="blogCardMeta">
                         <span className="blogCardAuthor">
                           {post.autherFullName || post.autherEmail || "Anonim"}
                         </span>
                         <time dateTime={post.createdAt}>{formatDate(post.createdAt)}</time>
                       </div>
-                    </Link>
+
+                      <div className="blogCardActions">
+                        <Link to={`/app/edit/${post.slug}`} className="btn btnPrimary btnSmall">
+                          Düzenle
+                        </Link>
+                        <button
+                          type="button"
+                          className="btn btnDanger btnSmall"
+                          onClick={() => deletePost(post.id)}
+                          disabled={deletingIds.includes(post.id)}
+                        >
+                          {deletingIds.includes(post.id) ? "Siliniyor…" : "Sil"}
+                        </button>
+                      </div>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -137,9 +184,7 @@ const BlogListPage: React.FC = () => {
                 >
                   Önceki
                 </button>
-                <span className="pageInfo">
-                  Sayfa {page}
-                </span>
+                <span className="pageInfo">Sayfa {page}</span>
                 <button
                   type="button"
                   disabled={totalFetched < PAGE_SIZE}
@@ -156,4 +201,4 @@ const BlogListPage: React.FC = () => {
   );
 };
 
-export default BlogListPage;
+export default MyPostsPage;

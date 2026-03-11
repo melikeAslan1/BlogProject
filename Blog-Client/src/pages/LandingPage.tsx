@@ -1,12 +1,54 @@
 import type React from "react";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import SiteHeader from "../components/SiteHeader";
 import { useAuth } from "../auth/AuthContext";
+import api from "../lib/api";
 import "./landing.css";
 import "../components/site.css";
 
+type FeaturedPost = {
+  id: number;
+  title: string;
+  slug: string;
+  content: string;
+  createdAt: string;
+  updatedAt: string | null;
+  isPublished: boolean;
+  authorId: string;
+  autherFullName: string | null;
+  autherEmail: string | null;
+};
+
 const LandingPage: React.FC = () => {
   const { isAuthenticated } = useAuth();
+  const [featured, setFeatured] = useState<FeaturedPost[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+    setError(null);
+
+    api
+      .get<FeaturedPost[]>("/api/blog", { params: { page: 1, pageSize: 3, isPublished: true } })
+      .then((res) => {
+        if (cancelled) return;
+        setFeatured(res.data ?? []);
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setError("Öne çıkanlar yüklenemedi.");
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   return (
     <div style={{ minHeight: "100vh" }}>
@@ -43,21 +85,35 @@ const LandingPage: React.FC = () => {
               </div>
             </div>
 
-            <aside className="heroCard" aria-label="Örnek içerik kartı">
+            <aside className="heroCard" aria-label="Öne çıkan yazılar">
               <h2 className="heroCardTitle">Bugün öne çıkanlar</h2>
               <div className="heroCardBody">
-                <div className="miniPost">
-                  <p className="miniPostTitle">Minimal tasarımla daha okunabilir yazılar</p>
-                  <div className="miniPostMeta">Okuma: 4 dk • Tasarım</div>
-                </div>
-                <div className="miniPost">
-                  <p className="miniPostTitle">React’te modern auth akışı (Vite + API)</p>
-                  <div className="miniPostMeta">Okuma: 6 dk • Yazılım</div>
-                </div>
-                <div className="miniPost">
-                  <p className="miniPostTitle">Blog yazarken üretkenlik: Notlardan yayına</p>
-                  <div className="miniPostMeta">Okuma: 5 dk • Üretkenlik</div>
-                </div>
+                {loading ? (
+                  <div className="miniPost">
+                    <p className="miniPostTitle">Yükleniyor…</p>
+                  </div>
+                ) : error ? (
+                  <div className="miniPost">
+                    <p className="miniPostTitle">{error}</p>
+                  </div>
+                ) : featured.length === 0 ? (
+                  <div className="miniPost">
+                    <p className="miniPostTitle">Henüz öne çıkan yazı yok.</p>
+                  </div>
+                ) : (
+                  featured.map((post) => (
+                    <Link key={post.id} to={`/blog/${post.slug}`} className="miniPost">
+                      <p className="miniPostTitle">{post.title}</p>
+                      <div className="miniPostMeta">
+                        {new Date(post.createdAt).toLocaleDateString("tr-TR", {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                        })} • {post.autherFullName || post.autherEmail || "Anonim"}
+                      </div>
+                    </Link>
+                  ))
+                )}
               </div>
             </aside>
           </section>

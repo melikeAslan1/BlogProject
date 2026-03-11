@@ -24,6 +24,30 @@
   line-height: 1.5;
 }
 
+.blogListSearch {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.blogSearchInput {
+  flex: 1;
+  min-width: 220px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(17, 24, 39, 0.6);
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+.blogSearchInput:focus {
+  outline: none;
+  border-color: rgba(59, 130, 246, 0.7);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.14);
+}
+
 .blogList {
   display: grid;
   gap: 16px;
@@ -79,6 +103,19 @@
 .blogCardAuthor::after {
   content: "·";
   margin-left: 12px;
+}
+
+.blogCardLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.blogCardActions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .blogListEmpty {

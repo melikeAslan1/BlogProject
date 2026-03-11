@@ -40,7 +40,13 @@ public class BlogController : ControllerBase
         if (isPublished)
             query = query.Where(b => b.IsPublished);
         if (!string.IsNullOrWhiteSpace(q))
-            query = query.Where(b => b.Title.Contains(q) || b.Content.Contains(q));
+        {
+            var qLower = q.Trim().ToLower();
+            query = query.Where(b =>
+                EF.Functions.Like(b.Title.ToLower(), $"%{qLower}%") ||
+                EF.Functions.Like(b.Content.ToLower(), $"%{qLower}%")
+            );
+        }
         if (!string.IsNullOrWhiteSpace(authorId))
             query = query.Where(b => b.AuthorId == authorId);
         var items = await query
