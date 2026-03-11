@@ -3,6 +3,7 @@ import { useAuth } from "../auth/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import api from "../lib/api";
+import { isMinLength, isValidEmail } from "../lib/validators";
 import SiteHeader from "../components/SiteHeader";
 import "./auth-pages.css";
 import "../components/site.css";
@@ -23,12 +24,17 @@ const RegisterPage: React.FC = () => {
     e.preventDefault();
     setError(null);
 
+    if (!isValidEmail(email)) {
+      setError("Lütfen geçerli bir e-posta girin.");
+      return;
+    }
+
     if (password !== confirmPassword) {
       setError("Şifreler eşleşmiyor.");
       return;
     }
 
-    if (password.length < 6) {
+    if (!isMinLength(password, 6)) {
       setError("Şifre en az 6 karakter olmalıdır.");
       return;
     }

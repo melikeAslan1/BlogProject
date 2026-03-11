@@ -64,20 +64,53 @@ public class BlogController : ControllerBase
         });
         return Ok(result);
     }
-    [HttpGet("{slug}")]
-    [AllowAnonymous]
-    public async Task<ActionResult<BlogResponse>> GetBySlug(string slug)
+    [HttpGet("{id:int}")]
+    [Authorize]
+    public async Task<ActionResult<BlogResponse>> GetById(int id)
     {
         var b = await _context.BlogPosts
             .Include(b => b.Author)
-            .FirstOrDefaultAsync(b => b.Slug == slug && b.IsPublished);
+            .FirstOrDefaultAsync(b => b.Id == id);
         if (b == null) return NotFound();
+
         if (!b.IsPublished)
         {
             var uid = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (uid == null || uid != b.AuthorId)
                 return Forbid();
         }
+
+        return Ok(new BlogResponse
+        {
+            Id = b.Id,
+            Title = b.Title,
+            Slug = b.Slug,
+            Content = b.Content,
+            CreatedAt = b.CreatedAt,
+            UpdatedAt = b.UpdatedAt,
+            IsPublished = b.IsPublished,
+            AuthorId = b.AuthorId,
+            AutherFullName = b.Author?.FullName,
+            AutherEmail = b.Author?.Email
+        });
+    }
+
+    [HttpGet("{slug}")]
+    [AllowAnonymous]
+    public async Task<ActionResult<BlogResponse>> GetBySlug(string slug)
+    {
+        var b = await _context.BlogPosts
+            .Include(b => b.Author)
+            .FirstOrDefaultAsync(b => b.Slug == slug);
+        if (b == null) return NotFound();
+
+        if (!b.IsPublished)
+        {
+            var uid = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (uid == null || uid != b.AuthorId)
+                return Forbid();
+        }
+
         return Ok(new BlogResponse
         {
             Id = b.Id,
@@ -162,7 +195,22 @@ public class BlogController : ControllerBase
         entity.IsPublished = dto.IsPublished;
         entity.UpdatedAt = DateTime.UtcNow;
         await _context.SaveChangesAsync();
-        return NoContent();
+
+        var resp = new BlogResponse
+        {
+            Id = entity.Id,
+            Title = entity.Title,
+            Slug = entity.Slug,
+            Content = entity.Content,
+            CreatedAt = entity.CreatedAt,
+            UpdatedAt = entity.UpdatedAt,
+            IsPublished = entity.IsPublished,
+            AuthorId = entity.AuthorId,
+            AutherFullName = entity.Author?.FullName,
+            AutherEmail = entity.Author?.Email
+        };
+
+        return Ok(resp);
     }
     [HttpDelete("{id:int}")]
     [Authorize]

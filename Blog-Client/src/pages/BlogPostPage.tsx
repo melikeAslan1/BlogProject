@@ -1,6 +1,7 @@
 import type React from "react";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useAuth } from "../auth/AuthContext";
 import api from "../lib/api";
 import SiteHeader from "../components/SiteHeader";
 import "../components/site.css";
@@ -29,8 +30,11 @@ function formatDate(iso: string): string {
 
 const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
+  const { user, isAuthenticated } = useAuth();
   const [post, setPost] = useState<BlogPostDetail | null>(null);
   const [loading, setLoading] = useState(true);
+  const [deleting, setDeleting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -79,6 +83,22 @@ const BlogPostPage: React.FC = () => {
     );
   }
 
+  const onDelete = async () => {
+    if (!post) return;
+    if (!window.confirm("Bu yazıyı silmek istediğinizden emin misiniz?")) return;
+
+    setDeleting(true);
+    setError(null);
+    try {
+      await api.delete(`/api/blog/${post.id}`);
+      navigate("/blog");
+    } catch (err: any) {
+      setError(err.response?.data ?? "Yazı silinemedi.");
+    } finally {
+      setDeleting(false);
+    }
+  };
+
   return (
     <div style={{ minHeight: "100vh", background: "#0b1220", color: "#e5e7eb" }}>
       <SiteHeader />
@@ -101,6 +121,26 @@ const BlogPostPage: React.FC = () => {
           </h1>
           <div style={{ fontSize: 14, color: "rgba(226,232,240,0.65)", marginBottom: 28 }}>
             {post.autherFullName || post.autherEmail || "Anonim"} · {formatDate(post.createdAt)}
+            {isAuthenticated && user?.email && user.email === post.autherEmail ? (
+              <>
+                <Link
+                  to={`/app/edit/${encodeURIComponent(post.slug)}`}
+                  className="btn btnPrimary"
+                  style={{ marginLeft: 14, fontSize: 12, padding: "6px 10px", verticalAlign: "middle" }}
+                >
+                  Düzenle
+                </Link>
+                <button
+                  type="button"
+                  className="btn btnDanger"
+                  style={{ marginLeft: 12, fontSize: 12, padding: "6px 10px", verticalAlign: "middle" }}
+                  onClick={onDelete}
+                  disabled={deleting}
+                >
+                  {deleting ? "Siliniyor…" : "Sil"}
+                </button>
+              </>
+            ) : null}
           </div>
           <div
             style={{

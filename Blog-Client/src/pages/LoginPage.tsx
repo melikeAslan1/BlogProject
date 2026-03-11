@@ -3,6 +3,7 @@ import { useAuth } from "../auth/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import api from "../lib/api";
+import { isMinLength, isValidEmail } from "../lib/validators";
 import SiteHeader from "../components/SiteHeader";
 import "./auth-pages.css";
 import "../components/site.css";
@@ -20,6 +21,16 @@ const LoginPage: React.FC = () => {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+
+    if (!isValidEmail(email)) {
+      setError("Lütfen geçerli bir e-posta girin.");
+      return;
+    }
+    if (!isMinLength(password, 6)) {
+      setError("Şifre en az 6 karakter olmalıdır.");
+      return;
+    }
+
     setLoading(true);
 
     try {

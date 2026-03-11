@@ -1,5 +1,6 @@
 import type React from "react";
 import { useAuth } from "../auth/AuthContext";
+import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import "../components/site.css";
 
@@ -31,7 +32,11 @@ const HomePage: React.FC = () => {
                         <div style={{ fontWeight: 850, marginBottom: 6 }}>Sonraki adımlar</div>
                         <ul style={{ margin: 0, paddingLeft: 18, color: "rgba(226, 232, 240, 0.75)" }}>
                             <li>Yazı listeleme (feed) ve detay sayfası</li>
-                            <li>Yeni yazı oluşturma / düzenleme</li>
+                            <li>
+                              <Link to="/app/create" style={{ color: "inherit", textDecoration: "underline" }}>
+                                Yeni yazı oluşturma / düzenleme
+                              </Link>
+                            </li>
                             <li>Profil ve ayarlar</li>
                         </ul>
                     </div>

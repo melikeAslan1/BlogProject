@@ -39,6 +39,9 @@ const SiteHeader: React.FC = () => {
                 <span className="muted" style={{ fontSize: 13 }}>
                   {user?.fullName || user?.email}
                 </span>
+                <Link to="/app/create" className="btn">
+                  Yeni Yazı
+                </Link>
                 <Link to="/app" className="btn btnPrimary">
                   Panel
                 </Link>

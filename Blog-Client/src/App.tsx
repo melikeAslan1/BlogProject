@@ -7,6 +7,8 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import BlogListPage from "./pages/BlogListPage";
 import BlogPostPage from "./pages/BlogPostPage";
+import CreateBlogPage from "./pages/CreateBlogPage";
+import UpdateBlogPage from "./pages/UpdateBlogPage";
 
 const App: React.FC = () => {
   return(
@@ -15,6 +17,8 @@ const App: React.FC = () => {
       <Route path="/blog" element={<BlogListPage></BlogListPage>}/>
       <Route path="/blog/:slug" element={<BlogPostPage></BlogPostPage>}/>
       <Route path="/app" element={<PrivateRoute><HomePage></HomePage></PrivateRoute>}/>
+      <Route path="/app/create" element={<PrivateRoute><CreateBlogPage /></PrivateRoute>} />
+      <Route path="/app/edit/:slug" element={<PrivateRoute><UpdateBlogPage /></PrivateRoute>} />
       <Route path="/login" element={<LoginPage></LoginPage>}/>
       <Route path="/register" element={<RegisterPage></RegisterPage>}/>
       <Route path="*" element={<Navigate to="/" replace></Navigate>}/>
