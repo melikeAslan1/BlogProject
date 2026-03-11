@@ -20,7 +20,7 @@ public static class SlugHelper
                    .Replace("Ç", "c"); 
 
         text = Regex.Replace(text, @"[^a-z0-9\s-]", "");
-        text = Regex.Replace(text, @"\s+", " ").Trim(); 
+        text = Regex.Replace(text, @"\s+", "-").Trim('-');
         text = Regex.Replace(text, @"-+", "-");
         return text;
     }
