@@ -8,12 +8,10 @@ using BlogApi.Models;
 using Microsoft.OpenApi.Models;
 
 
-
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddIdentityCore<AppUser>(options =>
 {
@@ -118,6 +116,4 @@ app.MapFallbackToFile("index.html");
 
 app.MapControllers();
 
-// ✅ Deploy ortamına uygun port ayarı
-var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-app.Run($"http://0.0.0.0:{port}");
+app.Run();
