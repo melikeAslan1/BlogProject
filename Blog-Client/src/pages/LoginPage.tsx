@@ -22,11 +22,14 @@ const LoginPage: React.FC = () => {
     e.preventDefault();
     setError(null);
 
-    if (!isValidEmail(email)) {
+    const normalizedEmail = email.trim().toLowerCase();
+    const trimmedPassword = password.trim();
+
+    if (!isValidEmail(normalizedEmail)) {
       setError("Lütfen geçerli bir e-posta girin.");
       return;
     }
-    if (!isMinLength(password, 6)) {
+    if (!isMinLength(trimmedPassword, 6)) {
       setError("Şifre en az 6 karakter olmalıdır.");
       return;
     }
@@ -34,7 +37,7 @@ const LoginPage: React.FC = () => {
     setLoading(true);
 
     try {
-      const res = await api.post("/api/auth/login", { email, password });
+      const res = await api.post("/api/auth/login", { email: normalizedEmail, password: trimmedPassword });
 
       const { token, email: outEmail, fullName } = res.data;
       login(token, { email: outEmail, fullName });
@@ -43,6 +46,14 @@ const LoginPage: React.FC = () => {
       const data = err.response?.data;
       if (typeof data === "string" && data.trim()) {
         setError(data);
+      } else if (data && typeof data === "object" && typeof data.title === "string" && data.title.trim()) {
+        setError(data.title);
+      } else if (!err.response) {
+        setError(
+          err.message === "Network Error"
+            ? "Sunucuya bağlanılamadı. API’nin çalıştığından emin olun (ör. http://localhost:5107) ve tarayıcıda güvenilmeyen HTTPS sertifikası kullanıyorsanız istemciyi HTTP adresine yönlendirin."
+            : err.message || "Giriş başarısız. Lütfen bilgilerinizi kontrol edin."
+        );
       } else {
         setError(data?.message || "Giriş başarısız. Lütfen bilgilerinizi kontrol edin.");
       }

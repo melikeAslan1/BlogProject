@@ -24,17 +24,21 @@ const RegisterPage: React.FC = () => {
     e.preventDefault();
     setError(null);
 
-    if (!isValidEmail(email)) {
+    const normalizedEmail = email.trim().toLowerCase();
+    const trimmedPassword = password.trim();
+    const trimmedConfirm = confirmPassword.trim();
+
+    if (!isValidEmail(normalizedEmail)) {
       setError("Lütfen geçerli bir e-posta girin.");
       return;
     }
 
-    if (password !== confirmPassword) {
+    if (trimmedPassword !== trimmedConfirm) {
       setError("Şifreler eşleşmiyor.");
       return;
     }
 
-    if (!isMinLength(password, 6)) {
+    if (!isMinLength(trimmedPassword, 6)) {
       setError("Şifre en az 6 karakter olmalıdır.");
       return;
     }
@@ -43,8 +47,8 @@ const RegisterPage: React.FC = () => {
 
     try {
       const res = await api.post("/api/auth/register", {
-        email,
-        password,
+        email: normalizedEmail,
+        password: trimmedPassword,
         fullName: fullName.trim() || undefined,
       });
 
@@ -52,16 +56,19 @@ const RegisterPage: React.FC = () => {
       login(token, { email: outEmail, fullName: outFullName });
       navigate("/");
     } catch (err: any) {
-      const data = err.response?.data;
-      const msg = data?.message;
-      const errors = data?.errors ?? data?.Errors;
-      if (Array.isArray(errors) && errors.length) {
-        setError(errors.join(" "));
+      if (!err.response) {
+        setError(`Sunucuya ulaşılamıyor: ${err.message}`);
       } else {
-        if (typeof data === "string" && data.trim()) {
+        const data = err.response?.data;
+        const msg = data?.message;
+        const errors = data?.errors ?? data?.Errors;
+        if (Array.isArray(errors) && errors.length) {
+          setError(errors.join(" "));
+        } else if (typeof data === "string" && data.trim()) {
           setError(data);
         } else {
-          setError(msg || "Kayıt başarısız. Lütfen tekrar deneyin.");
+          const statusText = err.response?.statusText;
+          setError(msg || statusText || "Kayıt başarısız. Lütfen tekrar deneyin.");
         }
       }
     } finally {

@@ -26,15 +26,19 @@ public class AuthController : ControllerBase
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterRequest model)
     {
-        var exists = await _userManager.FindByEmailAsync(model.Email);
+        if (model == null || string.IsNullOrWhiteSpace(model.Email) || string.IsNullOrWhiteSpace(model.Password))
+            return BadRequest("E-posta ve şifre zorunludur.");
+
+        var email = model.Email.Trim().ToLowerInvariant();
+        var exists = await _userManager.FindByEmailAsync(email);
         if (exists != null)
             return Conflict("Bu e-posta zaten kullanılıyor.");
 
             var user = new AppUser
             {
-                UserName = model.Email,
-                Email = model.Email,
-                FullName = model.FullName
+                UserName = email,
+                Email = email,
+                FullName = string.IsNullOrWhiteSpace(model.FullName) ? null : model.FullName.Trim()
             };
             var result = await _userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
@@ -78,11 +82,15 @@ public class AuthController : ControllerBase
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginRequest model)
     {
-        var user = await _userManager.FindByEmailAsync(model.Email);
+        if (model == null || string.IsNullOrWhiteSpace(model.Email) || string.IsNullOrWhiteSpace(model.Password))
+            return BadRequest("E-posta ve şifre zorunludur.");
+
+        var email = model.Email.Trim().ToLowerInvariant();
+        var user = await _userManager.FindByEmailAsync(email);
         if (user == null)
             return Unauthorized("Geçersiz e-posta veya şifre.");
 
-        var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
+        var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password.Trim(), false);
         if (!result.Succeeded)
             return Unauthorized("Geçersiz e-posta veya şifre.");
 

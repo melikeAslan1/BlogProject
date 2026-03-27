@@ -1,7 +1,10 @@
 import axios from "axios";
 
+// Development: http://localhost:5107 (BlogApi "http" launch profile). Override with VITE_API_URL if needed (e.g. https://localhost:7098).
+const baseURL = import.meta.env.VITE_API_URL ?? "http://localhost:5107";
+
 const api = axios.create({
-    baseURL: "http://localhost:5107",
+    baseURL,
 });
 
 api.interceptors.request.use((config) => {
