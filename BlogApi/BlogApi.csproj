@@ -4,10 +4,13 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Debug: BlogApi.exe yerine `dotnet BlogApi.dll` ile çalışır; yeniden derlerken exe kilit hatası (MSB3027) azalır. -->
+    <UseAppHost Condition="'$(Configuration)' == 'Debug'">false</UseAppHost>
   </PropertyGroup>
 
   <ItemGroup>
     <!-- Authentication & Identity -->
+    <PackageReference Include="Elastic.Clients.Elasticsearch" Version="9.3.4" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.0" />
 
@@ -25,5 +28,10 @@
     <!-- JWT Token -->
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.16.0" />
   </ItemGroup>
+
+  <!-- MSB3027/MSB3021: ikinci dotnet run / derleme onceki API sureci bin/*.dll kilidini birakmaz. -->
+  <Target Name="StopBlogApiBeforeDebugBuild" BeforeTargets="BeforeBuild" Condition="'$(Configuration)' == 'Debug' AND '$(SkipStopBlogApi)' != 'true'">
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildThisFileDirectory)stop-blog-api.ps1&quot;" IgnoreExitCode="true" />
+  </Target>
 
 </Project>

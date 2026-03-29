@@ -5,10 +5,16 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using BlogApi.Data;
 using BlogApi.Models;
+using BlogApi.Search;
 using Microsoft.OpenApi.Models;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<ElasticsearchOptions>(
+    builder.Configuration.GetSection(ElasticsearchOptions.SectionName));
+builder.Services.AddSingleton<IBlogSearchService, BlogSearchService>();
+builder.Services.AddHostedService<ElasticsearchIndexInitializer>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));

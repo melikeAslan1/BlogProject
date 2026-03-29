@@ -100,6 +100,7 @@ const CreateBlogPage: React.FC = () => {
             {error && <div className="authError">{error}</div>}
 
             <button type="submit" disabled={loading} className="authPrimaryBtn">
+          
               {loading ? "Oluşturuluyor…" : "Yazıyı Paylaş"}
             </button>
           </form>

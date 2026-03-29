@@ -116,6 +116,7 @@ const BlogListPage: React.FC = () => {
                 {items.map((post) => (
                   <li key={post.id}>
                     <Link to={`/blog/${post.slug}`} className="blogCard">
+             
                       <h2 className="blogCardTitle">{post.title}</h2>
                       <p className="blogCardExcerpt">{excerpt(post.content, EXCERPT_LENGTH)}</p>
                       <div className="blogCardMeta">

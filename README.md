@@ -20,6 +20,10 @@ BlogProject.sln
 └── BlogApi.Tests/      # Backend için unit test projesi
 ```
 
+## 🗄️ Veritabanı
+
+Kalıcı veri **PostgreSQL** üzerinde tutulur. Blog yazıları, kullanıcı hesapları (ASP.NET Identity) ve ilişkiler **Entity Framework Core** ile modellenir; veritabanı bağlantısı için **Npgsql** sağlayıcısı kullanılır. Yerel geliştirme ortamında bağlantı dizesini `BlogApi/appsettings.Development.json` dosyasındaki `ConnectionStrings:DefaultConnection` alanından ihtiyacına göre güncelleyebilirsin.
+
 ## 🚀 Nasıl Çalıştırılır
 
 ### 1) Backend (BlogApi)
