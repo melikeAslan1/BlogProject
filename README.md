@@ -74,4 +74,15 @@ dotnet test
 - `BlogApi` içinde **AuthController** ve **BlogController** temel CRUD işlemlerini sağlar.
 
 ---
+Veritabanı (PostgreSQL)
 
+Bu projede veritabanı olarak PostgreSQL kullanılmaktadır.
+
+⚙️ Kurulum
+
+Bilgisayarında PostgreSQL yoksa indirip kurabilirsin:
+👉 https://www.postgresql.org/download/
+
+Kurulum sonrası bir veritabanı oluştur:
+
+CREATE DATABASE BlogDb;
