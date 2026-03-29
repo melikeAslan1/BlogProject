@@ -74,3 +74,4 @@ dotnet test
 - `BlogApi` içinde **AuthController** ve **BlogController** temel CRUD işlemlerini sağlar.
 
 ---
+<img width="1897" height="990" alt="image" src="https://github.com/user-attachments/assets/77b1cc17-6421-45d0-b195-745beb2149ab" />
