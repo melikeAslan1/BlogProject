@@ -69,7 +69,7 @@ dotnet test
 
 ## 📌 Notlar
 
-- JWT oturumu `localStorage` üzerinde saklanır.
+- JWT oturumu backend tarafından ayarlanan `HttpOnly` cookie ile yönetilir; frontend tarafında tarayıcı storage’ında token tutulmaz.
 - Blog yazısı `slug`’ları otomatik üretilir ve tekrar eden başlıklarda `-2`, `-3` gibi suffix eklenir.
 - `BlogApi` içinde **AuthController** ve **BlogController** temel CRUD işlemlerini sağlar.
 

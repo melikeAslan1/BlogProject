@@ -2,14 +2,14 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import api from "../lib/api";
 
 type User = {
-    id?: string;
+    id: string;
     email: string;
     fullName?: string | null;
 }
 
 type AuthContextType = {
     user: User | null;
-    login: (user: Omit<User, "id">) => void;
+    login: (user: User) => void;
     logout: () => void;
     isAuthenticated: boolean;
 }
@@ -21,7 +21,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({children}) => {
 
     useEffect(() => {
         api
-            .get<Omit<User, "id">>("/api/auth/me", {
+            .get<User>("/api/auth/me", {
                 // Login olmayan kullanıcı için 401 beklenen durum; global interceptor redirect etmesin.
                 validateStatus: (status) => status === 200 || status === 401
             })
@@ -29,7 +29,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({children}) => {
             .catch(() => setUser(null));
     }, []);
 
-    const login = (u: Omit<User, "id">) => {
+    const login = (u: User) => {
         setUser(u);
     };
     const logout = ()=>{

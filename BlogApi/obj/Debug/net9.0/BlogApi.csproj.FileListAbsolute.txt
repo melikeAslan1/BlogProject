@@ -179,3 +179,11 @@ C:\Users\1meli\AppData\Local\Temp\BlogApiCookieCheck\BlogApi.deps.json
 C:\Users\1meli\AppData\Local\Temp\BlogApiCookieCheck\BlogApi.runtimeconfig.json
 C:\Users\1meli\AppData\Local\Temp\BlogApiCookieCheck\BlogApi.dll
 C:\Users\1meli\AppData\Local\Temp\BlogApiCookieCheck\BlogApi.pdb
+C:\Users\1meli\AppData\Local\Temp\BlogApiAuthIdCheck\appsettings.Development.json
+C:\Users\1meli\AppData\Local\Temp\BlogApiAuthIdCheck\appsettings.json
+C:\Users\1meli\AppData\Local\Temp\BlogApiAuthIdCheck\BlogApi.staticwebassets.runtime.json
+C:\Users\1meli\AppData\Local\Temp\BlogApiAuthIdCheck\BlogApi.staticwebassets.endpoints.json
+C:\Users\1meli\AppData\Local\Temp\BlogApiAuthIdCheck\BlogApi.deps.json
+C:\Users\1meli\AppData\Local\Temp\BlogApiAuthIdCheck\BlogApi.runtimeconfig.json
+C:\Users\1meli\AppData\Local\Temp\BlogApiAuthIdCheck\BlogApi.dll
+C:\Users\1meli\AppData\Local\Temp\BlogApiAuthIdCheck\BlogApi.pdb
