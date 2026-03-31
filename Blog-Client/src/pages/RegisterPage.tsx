@@ -52,8 +52,8 @@ const RegisterPage: React.FC = () => {
         fullName: fullName.trim() || undefined,
       });
 
-      const { token, email: outEmail, fullName: outFullName } = res.data;
-      login(token, { email: outEmail, fullName: outFullName });
+      const { email: outEmail, fullName: outFullName } = res.data;
+      login({ email: outEmail, fullName: outFullName });
       navigate("/");
     } catch (err: any) {
       if (!err.response) {

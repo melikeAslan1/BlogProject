@@ -39,8 +39,8 @@ const LoginPage: React.FC = () => {
     try {
       const res = await api.post("/api/auth/login", { email: normalizedEmail, password: trimmedPassword });
 
-      const { token, email: outEmail, fullName } = res.data;
-      login(token, { email: outEmail, fullName });
+      const { email: outEmail, fullName } = res.data;
+      login({ email: outEmail, fullName });
       navigate("/");
     } catch (err: any) {
       const data = err.response?.data;
