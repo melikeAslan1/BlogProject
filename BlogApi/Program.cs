@@ -3,13 +3,27 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Options;
 using BlogApi.Data;
 using BlogApi.Models;
+using BlogApi.Cache;
 using BlogApi.Search;
 using Microsoft.OpenApi.Models;
+using StackExchange.Redis;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<RedisOptions>(
+    builder.Configuration.GetSection(RedisOptions.SectionName));
+
+builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+{
+    var options = sp.GetRequiredService<IOptions<RedisOptions>>().Value;
+    return ConnectionMultiplexer.Connect(options.ConnectionString);
+});
+
+builder.Services.AddSingleton<IFeaturedPostsCache, FeaturedPostsRedisCache>();
 
 builder.Services.Configure<ElasticsearchOptions>(
     builder.Configuration.GetSection(ElasticsearchOptions.SectionName));

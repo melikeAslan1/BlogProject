@@ -32,7 +32,7 @@ const LandingPage: React.FC = () => {
     setError(null);
 
     api
-      .get<FeaturedPost[]>("/api/blog", { params: { page: 1, pageSize: 3, isPublished: true } })
+      .get<FeaturedPost[]>("/api/blog/featured")
       .then((res) => {
         if (cancelled) return;
         setFeatured(res.data ?? []);

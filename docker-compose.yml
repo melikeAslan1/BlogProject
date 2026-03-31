@@ -14,5 +14,15 @@ services:
     volumes:
       - es-data:/usr/share/elasticsearch/data
 
+  redis:
+    image: redis:7-alpine
+    container_name: blogproject-redis
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
 volumes:
   es-data:
+  redis-data:

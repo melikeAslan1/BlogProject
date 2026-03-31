@@ -1,0 +1,8 @@
+C:\Users\1meli\Documents\A\BlogProject\BlogApi\wwwroot\dist\assets\index-BFtWa0ds.js
+C:\Users\1meli\Documents\A\BlogProject\BlogApi\wwwroot\dist\index.html
+C:\Users\1meli\Documents\A\BlogProject\BlogApi\wwwroot\dist\assets\index-DRhRjluz.css
+C:\Users\1meli\Documents\A\BlogProject\BlogApi\wwwroot\dist\vite.svg
+wwwroot\dist\assets\index-BFtWa0ds.js
+wwwroot\dist\assets\index-DRhRjluz.css
+wwwroot\dist\index.html
+wwwroot\dist\vite.svg

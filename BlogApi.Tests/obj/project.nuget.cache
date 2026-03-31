@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EUlKDEJKnAQ=",
+  "dgSpecHash": "ScVB3q1Pn0o=",
   "success": true,
   "projectFilePath": "C:\\Users\\1meli\\Documents\\A\\BlogProject\\BlogApi.Tests\\BlogApi.Tests.csproj",
   "expectedPackageFiles": [
@@ -42,6 +42,8 @@
     "C:\\Users\\1meli\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\1meli\\.nuget\\packages\\npgsql\\9.0.0\\npgsql.9.0.0.nupkg.sha512",
     "C:\\Users\\1meli\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.0\\npgsql.entityframeworkcore.postgresql.9.0.0.nupkg.sha512",
+    "C:\\Users\\1meli\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "C:\\Users\\1meli\\.nuget\\packages\\stackexchange.redis\\2.8.16\\stackexchange.redis.2.8.16.nupkg.sha512",
     "C:\\Users\\1meli\\.nuget\\packages\\swashbuckle.aspnetcore\\6.7.0\\swashbuckle.aspnetcore.6.7.0.nupkg.sha512",
     "C:\\Users\\1meli\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.7.0\\swashbuckle.aspnetcore.swagger.6.7.0.nupkg.sha512",
     "C:\\Users\\1meli\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.7.0\\swashbuckle.aspnetcore.swaggergen.6.7.0.nupkg.sha512",

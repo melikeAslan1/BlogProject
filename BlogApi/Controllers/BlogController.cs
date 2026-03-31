@@ -8,6 +8,7 @@ using BlogApi.Dtos;
 using BlogApi.Models;
 using BlogApi.Search;
 using BlogApi.Utils;
+using BlogApi.Cache;
 
 namespace YoboApi.Controllers;
 
@@ -18,12 +19,48 @@ public class BlogController : ControllerBase
     private readonly AppDbContext _context;
     private readonly UserManager<AppUser> _userManager;
     private readonly IBlogSearchService _search;
+    private readonly IFeaturedPostsCache _featuredCache;
 
-    public BlogController(AppDbContext context, UserManager<AppUser> userManager, IBlogSearchService search)
+    public BlogController(AppDbContext context, UserManager<AppUser> userManager, IBlogSearchService search, IFeaturedPostsCache featuredCache)
     {
         _context = context;
         _userManager = userManager;
         _search = search;
+        _featuredCache = featuredCache;
+    }
+
+    [HttpGet("featured")]
+    [AllowAnonymous]
+    public async Task<ActionResult<IEnumerable<BlogResponse>>> Featured()
+    {
+        // Önce Redis cache dene
+        var cached = await _featuredCache.GetAsync();
+        if (cached is { Count: > 0 })
+            return Ok(cached);
+
+        var items = await _context.BlogPosts
+            .Where(b => b.IsPublished)
+            .OrderByDescending(b => b.CreatedAt)
+            .Take(3)
+            .Include(b => b.Author)
+            .ToListAsync();
+
+        var result = items.Select(b => new BlogResponse
+        {
+            Id = b.Id,
+            Title = b.Title,
+            Slug = b.Slug,
+            Content = b.Content,
+            CreatedAt = b.CreatedAt,
+            UpdatedAt = b.UpdatedAt,
+            IsPublished = b.IsPublished,
+            AuthorId = b.AuthorId,
+            AutherFullName = b.Author?.FullName,
+            AutherEmail = b.Author?.Email
+        }).ToList();
+
+        await _featuredCache.SetAsync(result);
+        return Ok(result);
     }
 
     [HttpGet]
